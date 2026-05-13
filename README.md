@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -504,8 +504,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;position:relative;z-
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 QUNI AI, Inc. All rights reserved.</p>
-      <p style="color:var(--text-dim);font-size:.8rem">Made with ❤️ for the future</p>
+      <p>© 2026 QUNI AI, Inc. All rights reserved.</p>
+      <p style="color:var(--text-dim);font-size:.8rem">Made my Venu Uday</p>
     </div>
   </footer>
 </div>
@@ -909,16 +909,28 @@ function scrollToFeatures(){
 }
 
 // ===== CHAT =====
-const aiResponses={
-  'How to build a React app':[
-    {type:'text',content:'Great question! Building a React app involves a few key steps. Let me walk you through the process:\n\n**Setting up the project:**'},
-    {type:'code',lang:'bash',content:'# Create a new React app using Vite\nnpm create vite@latest my-app -- --template react\ncd my-app\nnpm install\nnpm run dev'},
-    {type:'text',content:'This creates a new React project with Vite as the build tool — much faster than CRA.\n\n**Project Structure:**\n- `src/` — your React components\n- `public/` — static assets\n- `index.html` — entry point\n\n**Next steps:** Install React Router for navigation, Tailwind CSS for styling, and Zustand or Context API for state management. Want me to dive deeper into any of these?'}
-  ],
-  'default':[
-    {type:'text',content:'I understand your question. Let me provide a comprehensive answer.\n\nHere\'s what I know about this topic — I\'ll break it down clearly:\n\n**Key Points:**\n• This is a nuanced subject with multiple perspectives worth considering.\n• The most important factor here is understanding the core principles.\n• I can help you explore this further with specific examples.\n\nWould you like me to elaborate on any particular aspect? I can also provide code examples, create a detailed outline, or help you explore related concepts. Just let me know how you\'d like to proceed! 🚀'}
+const aiResponses = {
+  'How to build a React app': [
+    {
+      type: 'text',
+      content: `⚡ Hello, I’m QUNI AI.
+Your intelligent AI assistant is now online.
+How can I assist you today?`
+    }
   ]
 };
+    
+
+{
+  type: 'text',
+  content: `🛠️ QUNI AI is under maintenance.
+
+We’re training and optimizing our AI systems to serve you better.
+
+Thank you for your patience. 💙`
+}
+```
+
 
 let chatActive=false;
 
