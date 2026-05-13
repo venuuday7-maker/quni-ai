@@ -909,62 +909,26 @@ function scrollToFeatures(){
 }
 
 // ===== CHAT =====
-const aiResponses = {
-  'hi': [
-    {
-      type: 'text',
-      content: `👋 Hi, this is QUNI AI.
-
-🛠️ QUNI AI is currently under maintenance.
-
-We’re training and optimizing our AI systems to serve you better.
-
-Thank you for your patience. 💙`
-    }
+const aiResponses={
+  'hi':[
+    {type:'text',content:'👋 Hi, this is QUNI AI.\nYour intelligent AI assistant is now online.\n\n🛠️ QUNI AI is currently under maintenance.\nWe\'re training and optimizing our AI systems to serve you better.\n\nThank you for your patience. 💙'}
   ],
-
-  'How to build a React app': [
-    {
-      type: 'text',
-      content: 'Great question! Building a React app involves a few key steps. Let me walk you through the process:\n\n**Setting up the project:**'
-    },
-    {
-      type: 'code',
-      lang: 'bash',
-      content: '# Create a new React app using Vite\nnpm create vite@latest my-app -- --template react\ncd my-app\nnpm install\nnpm run dev'
-    },
-    {
-      type: 'text',
-      content: 'This creates a new React project with Vite as the build tool — much faster than CRA.\n\n**Project Structure:**\n- `src/` — your React components\n- `public/` — static assets\n- `index.html` — entry point\n\n**Next steps:** Install React Router for navigation, Tailwind CSS for styling, and Zustand or Context API for state management. Want me to dive deeper into any of these?'
-    }
+  'hello':[
+    {type:'text',content:'👋 Hi, this is QUNI AI.\nYour intelligent AI assistant is now online.\n\n🛠️ QUNI AI is currently under maintenance.\nWe\'re training and optimizing our AI systems to serve you better.\n\nThank you for your patience. 💙'}
   ],
-
-  'default': [
-    {
-      type: 'text',
-      content: `🛠️ QUNI AI is currently under maintenance.
-
-We’re training and optimizing our AI systems to serve you better.
-
-Please try again later.
-
-Thank you for your patience. 💙`
-    }
+  'hey':[
+    {type:'text',content:'👋 Hi, this is QUNI AI.\nYour intelligent AI assistant is now online.\n\n🛠️ QUNI AI is currently under maintenance.\nWe\'re training and optimizing our AI systems to serve you better.\n\nThank you for your patience. 💙'}
+  ],
+  'How to build a React app':[
+    {type:'text',content:'Great question! Building a React app involves a few key steps. Let me walk you through the process:\n\n**Setting up the project:**'},
+    {type:'code',lang:'bash',content:'# Create a new React app using Vite\nnpm create vite@latest my-app -- --template react\ncd my-app\nnpm install\nnpm run dev'},
+    {type:'text',content:'This creates a new React project with Vite as the build tool — much faster than CRA.\n\n**Project Structure:**\n- `src/` — your React components\n- `public/` — static assets\n- `index.html` — entry point\n\n**Next steps:** Install React Router for navigation, Tailwind CSS for styling, and Zustand or Context API for state management. Want me to dive deeper into any of these?'}
+  ],
+  'default':[
+    {type:'text',content:'⚡ Hello, I\'m QUNI AI.\n\n🛠️ QUNI AI is currently under maintenance.\nWe\'re training and optimizing our AI systems to serve you better.\n\nPlease try again later.\nThank you for your patience. 💙'}
   ]
 };
-'default': [
-  {
-    type: 'text',
-    content: `🛠️ QUNI AI is currently under maintenance.
 
-We’re training and optimizing our AI systems to serve you better.
-
-Please try again later.
-
-Thank you for your patience. 💙`
-  }
-]
-};
 let chatActive=false;
 
 function loadChat(el,title){
@@ -1024,7 +988,8 @@ function sendMessage(){
   area.scrollTop=area.scrollHeight;
   setTimeout(()=>{
     area.removeChild(typing);
-    const responses=aiResponses[text]||aiResponses['default'];
+    const matchKey=Object.keys(aiResponses).find(k=>k.toLowerCase()===text.toLowerCase().trim());
+    const responses=aiResponses[matchKey]||aiResponses['default'];
     const aiEl=document.createElement('div');
     aiEl.className='msg ai';
     aiEl.innerHTML=`<div class="msg-avatar ai">Q</div><div><div class="msg-bubble">${formatResponse(responses)}</div><div class="msg-time">${getTime()}</div><div class="msg-actions"><button class="msg-action-btn">📋 Copy</button><button class="msg-action-btn">👍</button><button class="msg-action-btn">👎</button></div></div>`;
