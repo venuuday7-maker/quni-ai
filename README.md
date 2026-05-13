@@ -504,8 +504,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;position:relative;z-
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 QUNI AI, Inc. All rights reserved.</p>
-      <p style="color:var(--text-dim);font-size:.8rem">Made my Venu Uday</p>
+      <p>© 2024 QUNI AI, Inc. All rights reserved.</p>
+      <p style="color:var(--text-dim);font-size:.8rem">Made with ❤️ for the future</p>
     </div>
   </footer>
 </div>
@@ -910,28 +910,61 @@ function scrollToFeatures(){
 
 // ===== CHAT =====
 const aiResponses = {
-  'How to build a React app': [
+  'hi': [
     {
       type: 'text',
-      content: `⚡ Hello, I’m QUNI AI.
-Your intelligent AI assistant is now online.
-How can I assist you today?`
-    }
-  ]
-};
-    
+      content: `👋 Hi, this is QUNI AI.
 
-{
-  type: 'text',
-  content: `🛠️ QUNI AI is under maintenance.
+🛠️ QUNI AI is currently under maintenance.
 
 We’re training and optimizing our AI systems to serve you better.
 
 Thank you for your patience. 💙`
-}
-```
+    }
+  ],
 
+  'How to build a React app': [
+    {
+      type: 'text',
+      content: 'Great question! Building a React app involves a few key steps. Let me walk you through the process:\n\n**Setting up the project:**'
+    },
+    {
+      type: 'code',
+      lang: 'bash',
+      content: '# Create a new React app using Vite\nnpm create vite@latest my-app -- --template react\ncd my-app\nnpm install\nnpm run dev'
+    },
+    {
+      type: 'text',
+      content: 'This creates a new React project with Vite as the build tool — much faster than CRA.\n\n**Project Structure:**\n- `src/` — your React components\n- `public/` — static assets\n- `index.html` — entry point\n\n**Next steps:** Install React Router for navigation, Tailwind CSS for styling, and Zustand or Context API for state management. Want me to dive deeper into any of these?'
+    }
+  ],
 
+  'default': [
+    {
+      type: 'text',
+      content: `🛠️ QUNI AI is currently under maintenance.
+
+We’re training and optimizing our AI systems to serve you better.
+
+Please try again later.
+
+Thank you for your patience. 💙`
+    }
+  ]
+};
+'default': [
+  {
+    type: 'text',
+    content: `🛠️ QUNI AI is currently under maintenance.
+
+We’re training and optimizing our AI systems to serve you better.
+
+Please try again later.
+
+Thank you for your patience. 💙`
+  }
+]
+};
 let chatActive=false;
 
 function loadChat(el,title){
